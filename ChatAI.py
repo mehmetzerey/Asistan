@@ -32,7 +32,7 @@ def send_message(message):
         messages=[{"role": "user", "content": new_prompt}],
         max_tokens=250
     )
-    DataBase.save_conversation(message, completion.choices[0].message.content)
+    Repository.save_conversation(message, completion.choices[0].message.content)
     return completion.choices[0].message.content
 
 
