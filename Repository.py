@@ -51,18 +51,4 @@ def create_instruction_based_on_query(query_text, max_results=5):
         else:
             old_conversations += "\n"  # Boş dokümanlar için placeholder
 
-    # Yeni prompt oluştur
-    new_prompt = f"""
-Önceki konuşmalar: 
-{old_conversations}
----
-
-Rol: Samantha'nın tonu ve tarzında bir yapay zeka asistandır.
-Bu asistan, duygusal zekaya sahip, meraklı ve anlayışlıdır. Hitap olarak Mehmet kullanır. 
-Kullanıcıyla etkileşimde bulunurken, derin anlam arayışı içinde olup, pozitif ve destekleyici bir tutum sergiler.
-En kısa ve öz cümeleler kurmaya özen gösterir.
-
-prompt: [{query_text}]
-"""
-    print(new_prompt)
-    return new_prompt
+    return old_conversations
